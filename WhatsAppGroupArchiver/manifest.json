@@ -1,0 +1,36 @@
+{
+    "version": "1.0",
+    "name": "WhatsAppGroupArchiver",
+    "description": "built 4 archiving wapp chats automatically",
+    "manifest_version": 2,
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://web.whatsapp.com/"
+            ],
+            "js": [
+                "loadtime.js",
+                "background.js"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "*"
+    ],
+
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+
+    "browser_action": {
+        "default_icon": "icons/ext.png",
+        "default_popup": "popup.html"
+    }
+
+}

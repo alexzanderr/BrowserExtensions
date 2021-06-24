@@ -1,0 +1,24 @@
+{
+    "version": "1.0",
+    "name": "GoogleSearchMonitor",
+    "description": "",
+    "manifest_version": 2,
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.google.com/search?q=*",
+                "https://duckduckgo.com/?q=*"
+            ],
+            "js": [
+                "loadtime.js"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "http://localhost:8080/",
+        "fetch",
+        "tabs"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name": "GoogleSearchMonitor",
+    "description": "sends google search results to http localhost web server and that one saves search results to local file",
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.google.com/search?q=*",
+                "https://duckduckgo.com/?q=*"
+            ],
+            "js": [
+                "loadtime.js"
+            ]
+        }
+    ],
+
+    "icons": {
+      "48": "icons/google.png"
+    }
+}

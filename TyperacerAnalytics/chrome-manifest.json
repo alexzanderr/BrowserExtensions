@@ -1,0 +1,40 @@
+{
+    "version": "1.0",
+    "name": "TyperacerAnalytics",
+    "description": "built only for play.typeracer.com, 10fastfingers.com and typing.io to store analytics about typing sessions",
+    "manifest_version": 2,
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://10fastfingers.com/*",
+                "https://typing.io/*",
+                "https://play.typeracer.com/*"
+            ],
+            "js": [
+                "loadtime.js",
+                "background.js"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "fetch",
+        "http://localhost:8000/",
+        "http://192.168.1.234/"
+    ],
+
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+
+    "browser_action": {
+        "default_icon": "icons/ext.png",
+        "default_popup": "popup.html"
+    }
+
+}
